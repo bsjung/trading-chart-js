@@ -12,7 +12,8 @@ const PATH = `./src/helpers/tmp/`
 module.exports = class WWPlugin {
     apply(compiler) {
         compiler.hooks.afterEmit.tap('AfterEmitPlugin', (compilation) => {
-            http.get(`http://localhost:${port}/script_ww.worker.js`, resp => {
+            console.log('[DEBUG] get WW source')
+            http.get(`http://0.0.0.0:8080/script_ww.worker.js`, resp => {
                 let data = ''
 
                 resp.on('data', (chunk) => {
@@ -23,14 +24,15 @@ module.exports = class WWPlugin {
                     //data = minify(data, { sourceMap: false }).code
                     data = lz.compressToBase64(data)
                     let json = JSON.stringify([data])
-                    try {
-                        var prev = fs.readFileSync(PATH + 'ww$$$.json')
-                    } catch(e) {}
+                    console.log('[DEBUG] json', json)
+                    // try {
+                    //     var prev = fs.readFileSync(PATH + 'ww1234.json')
+                    // } catch(e) {}
 
                     // Write new compiled ww only if the src changed
-                    if (json != prev) {
-                        fs.writeFileSync(PATH + 'ww$$$.json', json)
-                    }
+                    // if (json != prev) {
+                        fs.writeFileSync(PATH + 'ww1234.json', json)
+                    // }
                 })
 
                 }).on("error", (err) => {

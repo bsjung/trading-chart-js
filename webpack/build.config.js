@@ -14,7 +14,7 @@ const BANNER =
 `    Copyright (c) 2022 bsjung Code's All Right;\n` +
 `    Licensed under the MIT license`
 
-if (!fs.existsSync('./src/helpers/tmp/ww$$$.json')) {
+if (!fs.existsSync('./src/helpers/tmp/ww1234.json')) {
     console.log('Web-worker is not compiled. Run `npm run ww`\n')
     process.exit()
 }
