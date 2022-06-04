@@ -57,7 +57,7 @@ export default {
         },
         id: {
             type: String,
-            default: 'trading-vue-js'
+            default: 'trading-chart-js'
         },
         width: {
             type: Number,

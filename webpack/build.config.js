@@ -10,8 +10,8 @@ const DATE = new Date().toDateString()
 const BANNER =
 
 `TradingVue.JS - v${VERS} - ${DATE}\n` +
-`    https://github.com/tvjsx/trading-vue-js\n` +
-`    Copyright (c) 2019 C451 Code's All Right;\n` +
+`    https://github.com/bsjung/trading-chart-js\n` +
+`    Copyright (c) 2022 bsjung Code's All Right;\n` +
 `    Licensed under the MIT license`
 
 if (!fs.existsSync('./src/helpers/tmp/ww$$$.json')) {
@@ -21,8 +21,8 @@ if (!fs.existsSync('./src/helpers/tmp/ww$$$.json')) {
 
 let common = {
     entry: {
-        'trading-vue': './src/index.js',
-        'trading-vue.min': './src/index.js',
+        'trading-chart': './src/index.js',
+        'trading-chart.min': './src/index.js',
     },
     output: {
         path: path.resolve(__dirname, '../dist'),

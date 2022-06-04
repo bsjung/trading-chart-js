@@ -9,7 +9,7 @@ global.port = '8080'
 
 module.exports = [{
     entry: {
-        'trading-vue': './src/index.js',
+        'trading-chart': './src/index.js',
     },
     output: {
         filename: '[name].js',
@@ -47,8 +47,8 @@ module.exports = [{
                 <html>
                   <body>
                     <h1>Lib CDN:
-                        <a href="http://localhost:${port}/trading-vue.js">
-                            http://localhost:${port}/trading-vue.js
+                        <a href="http://localhost:${port}/trading-chart.js">
+                            http://localhost:${port}/trading-chart.js
                         </a>
                     </h1>
                     <h3>Get build hash:
