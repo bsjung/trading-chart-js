@@ -80,12 +80,30 @@ export default {
             this.$emit('range-changed', r)
             if (this.$props.ib) this.save_data_t()
         },
+        range_changed2(r) {
+            // Overwite & keep the original references
+            // Quick fix for IB mode (switch 2 next lines)
+            // TODO: wtf?
+            console.log('[DEBUG] TradeCoin Chart range_changed2')
+            console.log('[DEBUG] TradeCoin Chart r', r)
+            var sub = this.subset(r)
+
+            console.log('[DEBUG] TradeCoin Chart sub', sub)
+            // Utils.overwrite(this.range, r)
+            // Utils.overwrite(this.sub, sub)
+            this.update_layout()
+            this.$emit('range-changed', r)
+        },
         goto(t) {
             const dt = this.range[1] - this.range[0]
             this.range_changed([t - dt, t])
         },
         setRange(t1, t2) {
             this.range_changed([t1, t2])
+        },
+        setRange2(t1, t2) {
+            console.log('[DEBUG] TradeCoin Chart setRange2')
+            this.range_changed2([t1, t2])
         },
         cursor_changed(e) {
             if (e.mode) this.cursor.mode = e.mode

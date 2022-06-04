@@ -1,5 +1,5 @@
 /*!
- * TradingVue.JS - v1.0.5 - Sat Jun 04 2022
+ * TradingVue.JS - v1.0.6 - Sat Jun 04 2022
  *     https://github.com/bsjung/trading-chart-js
  *     Copyright (c) 2022 bsjung Code's All Right;
  *     Licensed under the MIT license
@@ -793,7 +793,7 @@ module.exports.isSortableArrayLike = function (o) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(645);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Anit-boostrap tactix */\n.trading-vue *, ::after, ::before {\n    box-sizing: content-box;\n}\n.trading-vue img {\n    vertical-align: initial;\n}\n", ""]);
+exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Anit-boostrap tactix */\n.trading-vue *, ::after, ::before {\n    box-sizing: content-box;\n}\n.trading-vue img {\n    vertical-align: initial;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -13876,12 +13876,29 @@ var TI = /*#__PURE__*/function () {
       this.$emit('range-changed', r);
       if (this.$props.ib) this.save_data_t();
     },
+    range_changed2: function range_changed2(r) {
+      // Overwite & keep the original references
+      // Quick fix for IB mode (switch 2 next lines)
+      // TODO: wtf?
+      console.log('[DEBUG] TradeCoin Chart range_changed2');
+      console.log('[DEBUG] TradeCoin Chart r', r);
+      var sub = this.subset(r);
+      console.log('[DEBUG] TradeCoin Chart sub', sub); // Utils.overwrite(this.range, r)
+      // Utils.overwrite(this.sub, sub)
+
+      this.update_layout();
+      this.$emit('range-changed', r);
+    },
     "goto": function goto(t) {
       var dt = this.range[1] - this.range[0];
       this.range_changed([t - dt, t]);
     },
     setRange: function setRange(t1, t2) {
       this.range_changed([t1, t2]);
+    },
+    setRange2: function setRange2(t1, t2) {
+      console.log('[DEBUG] TradeCoin Chart setRange2');
+      this.range_changed2([t1, t2]);
     },
     cursor_changed: function cursor_changed(e) {
       if (e.mode) this.cursor.mode = e.mode;
@@ -15591,7 +15608,8 @@ function TradingVuevue_type_script_lang_js_arrayLikeToArray(arr, len) { if (len 
       this.$refs.chart.setRange(t1, t2);
     },
     setRange2: function setRange2(t1, t2) {
-      this.$refs.chart.setRange(t1, t2);
+      console.log('[DEBUG] TradeCoin setRange2');
+      this.$refs.chart.setRange2(t1, t2);
     },
     getRange: function getRange() {
       if (this.chart_props.ib) {

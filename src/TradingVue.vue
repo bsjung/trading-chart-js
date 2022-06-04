@@ -283,7 +283,8 @@ export default {
             this.$refs.chart.setRange(t1, t2)
         },
         setRange2(t1, t2) {
-            this.$refs.chart.setRange(t1, t2)
+            console.log('[DEBUG] TradeCoin setRange2')
+            this.$refs.chart.setRange2(t1, t2)
         },
         getRange() {
             if (this.chart_props.ib) {
