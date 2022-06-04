@@ -1,6 +1,6 @@
 {
-  "name": "trading-vue-js",
-  "version": "1.0.2",
+  "name": "trading-chart-js",
+  "version": "1.0.3",
   "description": "Hackable charting lib for traders",
   "main": "./dist/trading-vue.js",
   "scripts": {
@@ -23,7 +23,7 @@
       "test/auto_tests/**/*"
     ]
   },
-  "author": "C451",
+  "author": "bsjung",
   "license": "MIT",
   "files": [
     "dist/*",
@@ -40,8 +40,8 @@
     "finviz",
     "trading-systems"
   ],
-  "homepage": "https://github.com/C451/trading-vue-js#readme",
-  "repository": "github:C451/trading-vue-js",
+  "homepage": "https://github.com/bsjung/trading-chart-js#readme",
+  "repository": "github:bsjung/trading-chart-js",
   "devDependencies": {
     "@ava/babel": "^1.0.1",
     "@babel/core": "^7.13.10",
